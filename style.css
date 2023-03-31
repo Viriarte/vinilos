@@ -1,0 +1,31 @@
+
+
+body {
+    background-color: beige;
+}
+
+
+
+img {
+    display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo {
+    text-align: center;
+    font-family: fantasy;
+    color: brown;
+    background-color: #ffa443;
+    
+}
+
+.pregunta {
+    text-align: center;
+
+}
+
+.ahoraya {
+    text-align: center;
+}
