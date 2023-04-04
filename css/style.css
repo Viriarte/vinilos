@@ -1,0 +1,58 @@
+
+
+body {
+    background-color: beige;
+}
+
+
+
+
+
+img {
+    display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo {
+    text-align: center;
+    font-family: fantasy;
+    color: brown;
+    background-color: #ffa443;
+    
+}
+
+
+
+
+
+.pregunta {
+    text-align: center;
+    color: black;
+    background-color: #ffa443;
+
+}
+
+.ahoraya {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+
+.compra {
+
+    text-align: center;
+    font-family: fantasy;
+
+}
+
+.contacto
+{
+    text-align: center;
+}
+
+
