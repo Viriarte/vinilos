@@ -1,39 +1,56 @@
 $(document).ready(function() {
-    $('#contactform').validate({
+    
+    $("#contactform").validate({
+      
       rules: {
         
-        "exampleInputName1": {
+        exampleInputName1: {
           required: true,
-          minlength: 3
+          minlength: 2
         },
-        "exampleInputEmail1": {
+        
+        exampleInputEmail1: {
           required: true,
           email: true
         },
-        "exampleInputMessage1": {
+        
+        exampleInputMessage1: {
           required: true,
-          minlength: 6
+          minlength: 10
         }
       },
+     
       messages: {
-        
-        "exampleInputName1": {
-          required: "Por favor ingrese su nombre",
-          minlength: "Su nombre debe tener al menos 3 caracteres"
+        exampleInputName1: {
+          required: "Este campo es obligatorio",
+          minlength: "Por favor ingrese al menos 2 caracteres"
         },
-        "exampleInputEmail1": {
-          required: "Por favor ingrese su correo electrónico",
+        exampleInputEmail1: {
+          required: "Este campo es obligatorio",
           email: "Por favor ingrese un correo electrónico válido"
         },
-        "exampleInputMessage1": {
-          required: "Por favor ingrese su mensaje",
-          minlength: "Su mensaje debe tener al menos 6 caracteres"
+        exampleInputMessage1: {
+          required: "Este campo es obligatorio",
+          minlength: "Por favor ingrese al menos 10 caracteres"
         }
       },
+     
+
       submitHandler: function(form) {
         
-        alert('Formulario enviado');
+        alert("Consulta enviada exitosamente");
         form.submit();
       }
     });
+  
+    
+    $("#enviarFormulario").prop("disabled", true);
+    $("#contactform").on("keyup change", function() {
+      if ($("#contactform").valid()) {
+        $("#enviarFormulario").prop("disabled", false);
+      } else {
+        $("#enviarFormulario").prop("disabled", true);
+      }
+    });
   });
+  
