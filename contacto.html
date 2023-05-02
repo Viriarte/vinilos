@@ -9,6 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <link rel="stylesheet" href="css/style.css">
+     
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 </head>
 
 <body>
@@ -71,36 +75,44 @@
     <br>
 
 
-  <section class="contacto">
-    <form name="contact-form" class="form">
-      <div class="form-container">
-
-          <h6>Nombre</h6>
-          <input name= "name" class="form-input" placeholder="Nombre y apellido">
-          <br>
-          <br>
-
-          <h6>Correo</h6>
-          <input name= "email" class="form-input" placeholder="Email">
-          <br>
-          <br>
-
-          <h6>numero de celular</h6>
-          <input name= "phone" class="form-input" placeholder="Número de celular">
-          <br>
-          <br>
-
-          <h6>Mensaje</h6>
-          <textarea name="message" class="form-input form-input--message" placeholder="Mensaje:"></textarea>
-          <br>
-          <br>
-
-          <input type="submit" value="Enviar" class="form-cta">
+    <div class="form-area">
+      <div class="container">
+          <div class="row single-form g-0">
+              <div class="col-sm-12 col-lg-6">
+                  <div class="left">
+                      <h2><span>Escribenos</span> <br>para poder ayudarte!</h2>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-lg-6">
+                  <div class="right">
+                     <i class="fa fa-caret-left"></i>
+                      <form id="contactform">
+                        <div class="mb-3">
+                          <label for="exampleInputName1" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Correo</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputMessage1" class="form-label">Mensaje</label>
+                            <textarea type="message" class="form-control" id="exampleInputMessage1"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
       </div>
-  </form>
-</section>
+  </div>
 
+  <script src="validacion_contacto.js"></script>
 
+  <br>
+<br>
+<br>
+<br>
 <br>
 <br>
 
@@ -109,6 +121,8 @@
     <small>Copyright &copy; El Sonido Vintage</small>
   </div>
 </footer>
+
+
     
     
 </body>
