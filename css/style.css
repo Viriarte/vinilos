@@ -289,3 +289,29 @@ p {
   
   
   
+
+
+
+.api table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f4c97f;
+  }
+  
+  .api td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .api th {
+    background-color: #f2f2f2;
+    text-align: left;
+    background-color: #f28246;
+  }
+  
+  .api img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
