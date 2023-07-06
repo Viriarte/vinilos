@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/vinilo.jpg">
+    <title>Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/app.js' %}" async></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+
+   
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+
+    
+    
+       <!-- Left links -->
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}">Volver</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'video' %}">Recomendacion</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'carrito' %}">Comprar</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'listar-album' %}">Inventario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'agregar-album' %}">Agregar</a>
+            </li>
+             <!-- Right links -->
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ user.username }}"></a>
+          </li>
+        {% else %}
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  
+
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+
+    </div>
+    <!-- Right elements -->
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<br>
+<br>
+
+    <section  class="titulo">
+        <h1>EL SONIDO VINTAGE</h1>
+    </section>
+
+
+    <br>
+    <br>
+    
+    <div class="form-area">
+      <div class="container">
+        <div class="row single-form g-0">
+          <div class="col-sm-12 col-lg-6">
+            <div class="left">
+              <h2><span>Escríbenos</span><br>para poder ayudarte!</h2>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <div class="right">
+              <i class="fa fa-caret-left"></i>
+              <form id="myForm">
+                <div class="mb-3">
+                  <label for="nombreInput" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombreInput" aria-describedby="nombreHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="correoInput" class="form-label">Correo</label>
+                  <input type="email" class="form-control" id="correoInput" aria-describedby="correoHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="mensajeInput" class="form-label">Mensaje</label>
+                  <textarea class="form-control" id="mensajeInput" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <br>
+                <br>
+                <p id="successMessage" class="text-success" style="display: none;">Mensaje enviado, dentro de muy poco nos comunicaremos con usted!</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <script>
+      document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío del formulario
+      
+        // Obtener los valores de los campos
+        var nombre = document.getElementById('nombreInput').value;
+        var correo = document.getElementById('correoInput').value;
+        var mensaje = document.getElementById('mensajeInput').value;
+      
+        // Validar los campos (por ejemplo, verificar que no estén vacíos)
+        if (nombre.trim() === '' || correo.trim() === '' || mensaje.trim() === '') {
+          return; // Si algún campo está vacío, no hacer nada
+        }
+      
+        // Mostrar el mensaje de éxito
+        var successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
+      });
+      </script>
+    
+    
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>     
+
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy; El Sonido Vintage</small>
+  </div>
+</footer>
+    
+    
+</body>
+</html>

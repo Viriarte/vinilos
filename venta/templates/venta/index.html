@@ -1,0 +1,45 @@
+{% extends 'venta/base.html' %}
+{% block contenido %}
+{% load static %}
+
+
+        <h1 class="pregunta">¡ Discos Disponibles !</h1>
+   
+        <br>
+
+        <section>
+          <div class="row pt-5 pb-5 m-0">
+            {% for p in albums %}
+            <div class="col-md-3">
+              <div class="card mb-3">
+                {% if p.imagen %}
+                <img src="{{p.imagen.url}}" class="card-img-top" alt="...">
+                {% endif %}
+                <div class="card-body">
+                  <div class="text-center">
+                    <h5 class="card-title">{{p.titulo}}</h5>
+                  </div>
+                  <div class="text-center">
+                    <p class="card-text">{{p.artista}}</p>
+                  </div>
+                  <div class="text-center">
+                    <p class="card-text">${{p.precio}}</p>
+                  </div>
+                  <br>
+                  <div class="text-center">
+                    <button type="button" class="btn btn-success">Comprar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        
+     
+      
+      <br>
+
+       
+
+{% endblock %}
